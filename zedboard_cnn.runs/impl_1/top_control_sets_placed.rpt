@@ -1,0 +1,729 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Wed Jun 11 22:17:37 2025
+| Host         : LAPTOP-SLS57AAL running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   651 |
+|    Minimum number of control sets                        |   651 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |  3157 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   651 |
+| >= 0 to < 4        |     4 |
+| >= 4 to < 6        |    70 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |   412 |
+| >= 12 to < 14      |    55 |
+| >= 14 to < 16      |     3 |
+| >= 16              |   101 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             109 |           52 |
+| No           | No                    | Yes                    |              28 |           12 |
+| No           | Yes                   | No                     |             741 |          257 |
+| Yes          | No                    | No                     |             147 |           48 |
+| Yes          | No                    | Yes                    |             261 |           76 |
+| Yes          | Yes                   | No                     |           24805 |         6635 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------+------------------------------------------------------------------+-------------------------------------+------------------+----------------+--------------+
+|     Clock Signal     |                           Enable Signal                          |           Set/Reset Signal          | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------+------------------------------------------------------------------+-------------------------------------+------------------+----------------+--------------+
+|  clk25/inst/clk_out1 | keys/keysmp_reg[2]_0                                             | keys/keydly_reg[2]_0                |                1 |              1 |         1.00 |
+|  clk25/inst/clk_out1 | the_ov7670/sioc0_out                                             |                                     |                1 |              1 |         1.00 |
+|  clk25/inst/clk_out1 | the_ov7670/en_1k                                                 |                                     |                1 |              2 |         2.00 |
+|  clk25/inst/clk_out1 | keys/keysmp_reg[2]_0                                             |                                     |                2 |              3 |         1.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/ShifterCnt/E[0]                               | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/ShifterCnt/FSM_sequential_ConvState_reg[0][0] | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/ShifterCnt/FSM_sequential_ConvState_reg[0][0] | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/CmpCnt[3]_i_1_n_0                                     | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/ShifterCnt/E[0]                                | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/ShifterCnt/E[0]                               | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/ShifterCnt/E[0]                                | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreReadIndex[3]_i_1_n_0                      | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/ShifterCnt/FSM_sequential_ConvState_reg[0][0] | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/ShifterCnt/E[0]                                | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/ShifterCnt/E[0]                               | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/ShifterCnt/FSM_sequential_ConvState_reg[0][0] | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/ShifterCnt/E[0]                               | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/ColumnCnt/E[0]                                | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/ShifterCnt/E[0]                                | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/BiasCnt[1]_i_1_n_0                                    | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/ShifterCnt/FSM_sequential_ConvState_reg[0][0] | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/sel                                            | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/ColumnCnt/E[0]                                 | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/CEB2                                                  | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | the_ov7670/write_data[30]_i_1_n_0                                | the_ov7670/write_data[31]_i_1_n_0   |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/ShifterCnt/E[0]                                | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreReadIndex[3]_i_1__5_n_0                    | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/ShifterCnt/E[0]                                | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/ShifterCnt/E[0]                               | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/ShifterCnt/FSM_sequential_ConvState_reg[0][0] | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/ShifterCnt/E[0]                                | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/ShifterCnt/E[0]                                | keys/rst_BUFG                       |                1 |              4 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreReadIndex[4]_i_1__3_n_0                    | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/sel                                            | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreReadIndex[4]_i_1__5_n_0                    | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_3/FifoPineLine[0].ReadEn_reg_n_0              | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreReadIndex[4]_i_1__16_n_0                   | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreReadIndex[4]_i_1__0_n_0                   | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreReadIndex[4]_i_1__9_n_0                    | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/CEA2                                                  | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreReadIndex[4]_i_1__14_n_0                   | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreReadIndex[4]_i_1__12_n_0                  | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | the_ov7670/en_1k                                                 | the_ov7670/send_cnt                 |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_4/FifoPineLine[0].ReadEn_reg_n_0              | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_2/FifoPineLine[0].ReadEn_reg_n_0              | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_1/FifoPineLine[0].ReadEn_reg_n_0              | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_5/FifoPineLine[0].ReadEn_reg_n_0              | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_5/ColumnCnt/ColumnCo                          | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/fc1/p_0_in__0[10]            |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/fc1/p_0_in__0[9]             |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreReadIndex[4]_i_1__2_n_0                    | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_4/ColumnCnt/ColumnCo                          | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreReadIndex[4]_i_1_n_0                      | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreReadIndex[4]_i_1__10_n_0                   | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreReadIndex[4]_i_1__1_n_0                    | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreReadIndex[4]_i_1__7_n_0                   | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/ColumnCnt/E[0]                                 | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreReadIndex[4]_i_1__6_n_0                   | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_3/ColumnCnt/ColumnCo                          | keys/rst_BUFG                       |                2 |              5 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreReadIndex[4]_i_1__8_n_0                    | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/ShifterCnt/FSM_sequential_ConvState_reg[0][0]  | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/ColumnCnt/E[0]                                 | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/ColumnCnt/E[0]                                 | keys/rst_BUFG                       |                1 |              5 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_3/FifoPineLine[0].ReadEn_reg_n_0              | keys/rst_BUFG                       |                2 |              6 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_2/FifoPineLine[0].ReadEn_reg_n_0              | keys/rst_BUFG                       |                2 |              6 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_1/FifoPineLine[0].ReadEn_reg_n_0              | keys/rst_BUFG                       |                2 |              6 |         3.00 |
+|  clk25/inst/clk_out1 | the_ov7670/addr_cnt                                              | keys/keydly_reg[0]_0                |                2 |              7 |         3.50 |
+|  clk25/inst/clk_out1 | keys/E[0]                                                        |                                     |                5 |              8 |         1.60 |
+|  clk25/inst/clk_out1 |                                                                  | the_ov7670/clear                    |                3 |              9 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[23][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[23][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[14][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[22][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[23][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[3][15]_i_1__4_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[11][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[14][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[7][15]_i_1__4_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[16][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[18][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[24][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[6][15]_i_1__4_n_0                     | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData                                       | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[10][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[12][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[13][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[15][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[17][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[1][15]_i_1__4_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 |                                                                  | keys/SR[0]                          |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[19][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[2][15]_i_1__4_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[21][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[4][15]_i_1__4_n_0                     | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[5][15]_i_1__4_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[8][15]_i_1__4_n_0                     | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[9][15]_i_1__4_n_0                     | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/CoreData[20][15]_i_1__4_n_0                    | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData                                       | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[11][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[22][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[14][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[12][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[19][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[18][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[24][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[2][15]_i_1__11_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[3][15]_i_1__11_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[4][15]_i_1__11_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[10][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[15][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[23][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[5][15]_i_1__11_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[8][15]_i_1__11_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[16][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[1][15]_i_1__11_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[21][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[9][15]_i_1__11_n_0                    | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[6][15]_i_1__11_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[17][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[7][15]_i_1__11_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[20][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/CoreData[13][15]_i_1__11_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[18][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[10][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[16][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[17][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[11][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[14][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[15][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData                                      | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[19][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[1][15]_i_1__8_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[13][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[12][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[2][15]_i_1__8_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[3][15]_i_1__8_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[6][15]_i_1__8_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[5][15]_i_1__8_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[23][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[24][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[9][15]_i_1__8_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[5][15]_i_1__9_n_0                     | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[22][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[8][15]_i_1__8_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[20][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                8 |             10 |         1.25 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[7][15]_i_1__8_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[4][15]_i_1__8_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/CoreData[21][15]_i_1__8_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData                                      | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[10][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[13][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[11][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[4][15]_i_1__0_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[22][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[21][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[16][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[17][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[5][15]_i_1__0_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[2][15]_i_1__0_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[9][15]_i_1__0_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[7][15]_i_1__0_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[15][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[14][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[18][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[23][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[3][15]_i_1__0_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[1][15]_i_1__0_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[19][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[6][15]_i_1__0_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[12][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[24][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[8][15]_i_1__0_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/CoreData[20][15]_i_1__0_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCBiasData[9][15]_i_1_n_0                             | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCBiasData[6][15]_i_1_n_0                             | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCBiasData[2][15]_i_1_n_0                             | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCBiasData                                            | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCBiasData[1][15]_i_1_n_0                             | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCBiasData[5][15]_i_1_n_0                             | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCBiasData[3][15]_i_1_n_0                             | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCBiasData[4][15]_i_1_n_0                             | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCBiasData[8][15]_i_1_n_0                             | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | the_vga/E[0]                                                     | the_vga/v_cnt[9]_i_1_n_0            |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[19][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[15][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[24][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[10][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[2][15]_i_1__3_n_0                     | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[1][15]_i_1__3_n_0                     | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[21][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[5][15]_i_1__3_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[9][15]_i_1__3_n_0                     | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData                                       | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[8][15]_i_1__3_n_0                     | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[16][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[12][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[11][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[17][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[20][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[22][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[13][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[3][15]_i_1__3_n_0                     | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[4][15]_i_1__3_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[18][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[6][15]_i_1__3_n_0                     | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[7][15]_i_1__3_n_0                     | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/CoreData[14][15]_i_1__3_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[7][15]_i_1__6_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[21][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[8][15]_i_1__6_n_0                     | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData                                       | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[13][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[3][15]_i_1__6_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[22][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[10][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[12][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[1][15]_i_1__6_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[5][15]_i_1__6_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[15][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[14][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[16][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[11][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[17][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[9][15]_i_1__6_n_0                     | keys/rst_BUFG                       |                7 |             10 |         1.43 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[2][15]_i_1__6_n_0                     | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[19][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[18][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[20][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[23][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[24][15]_i_1__6_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[4][15]_i_1__6_n_0                     | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/CoreData[6][15]_i_1__6_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[22][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[23][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[10][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[13][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[17][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[24][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[15][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[2][15]_i_1__7_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[3][15]_i_1__7_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[4][15]_i_1__7_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[6][15]_i_1__7_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[12][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[14][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[5][15]_i_1__7_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[18][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[11][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData                                      | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[16][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[19][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[1][15]_i_1__7_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[20][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[21][15]_i_1__7_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[8][15]_i_1__7_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[9][15]_i_1__7_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/CoreData[7][15]_i_1__7_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[16][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[21][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[1][15]_i_1__13_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[8][15]_i_1__13_n_0                   | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[18][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[19][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[0][15]_i_1__13_n_0                   | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[11][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[17][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[4][15]_i_1__13_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[9][15]_i_1__13_n_0                   | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[13][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[7][15]_i_1__13_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[5][15]_i_1__13_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[2][15]_i_1__13_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[22][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[20][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[15][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[12][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[3][15]_i_1__13_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[6][15]_i_1__13_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[23][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[10][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[24][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/CoreData[14][15]_i_1__13_n_0                  | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[5][15]_i_1_n_0                       | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[6][15]_i_1_n_0                       | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[12][15]_i_1_n_0                      | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[7][15]_i_1_n_0                       | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[20][15]_i_1_n_0                      | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[10][15]_i_1_n_0                      | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[11][15]_i_1_n_0                      | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[21][15]_i_1_n_0                      | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[13][15]_i_1_n_0                      | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[19][15]_i_1_n_0                      | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[8][15]_i_1_n_0                       | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[14][15]_i_1_n_0                      | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[17][15]_i_1_n_0                      | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[18][15]_i_1_n_0                      | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[22][15]_i_1_n_0                      | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[16][15]_i_1_n_0                      | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[4][15]_i_1_n_0                       | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData                                      | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[15][15]_i_1_n_0                      | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[2][15]_i_1_n_0                       | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[3][15]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[9][15]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[24][15]_i_1_n_0                      | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[23][15]_i_1_n_0                      | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/CoreData[1][15]_i_1_n_0                       | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[2][15]_i_1__9_n_0                     | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData                                       | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[21][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[16][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[10][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[17][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCBiasData[7][15]_i_1_n_0                             | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[3][15]_i_1__9_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[7][15]_i_1__9_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[18][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[19][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[1][15]_i_1__9_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[22][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[9][15]_i_1__9_n_0                     | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[20][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[13][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[24][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[6][15]_i_1__9_n_0                     | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[11][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[12][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[15][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[23][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[14][15]_i_1__9_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[4][15]_i_1__9_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/CoreData[8][15]_i_1__9_n_0                     | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[23][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[19][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[2][15]_i_1__2_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[9][15]_i_1__2_n_0                     | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[17][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[6][15]_i_1__2_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[5][15]_i_1__2_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData                                       | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[13][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[10][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[18][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[20][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                8 |             10 |         1.25 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[15][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[1][15]_i_1__2_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[12][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[3][15]_i_1__2_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[11][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[22][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[24][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[14][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[4][15]_i_1__2_n_0                     | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[8][15]_i_1__2_n_0                     | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[7][15]_i_1__2_n_0                     | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[16][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/CoreData[21][15]_i_1__2_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[7][15]_i_1__12_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[12][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[3][15]_i_1__12_n_0                    | keys/rst_BUFG                       |                6 |             10 |         1.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[5][15]_i_1__12_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[6][15]_i_1__12_n_0                    | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[15][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[21][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[24][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[1][15]_i_1__12_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[0][15]_i_1__12_n_0                    | keys/rst_BUFG                       |                5 |             10 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[19][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[10][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[9][15]_i_1__12_n_0                    | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[11][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[17][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[8][15]_i_1__12_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[13][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData                                       | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[16][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                3 |             10 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[18][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[22][15]_i_1__12_n_0                   | keys/rst_BUFG                       |                2 |             10 |         5.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[4][15]_i_1__12_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/CoreData[2][15]_i_1__12_n_0                    | keys/rst_BUFG                       |                4 |             10 |         2.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[21][10]_i_1_n_0                       | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[12][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[18][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[2][15]_i_1__10_n_0                    | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[12][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[22][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[11][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[5][15]_i_1__10_n_0                    | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[13][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                6 |             11 |         1.83 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[20][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[22][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                6 |             11 |         1.83 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[23][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[17][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[13][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[8][15]_i_1__10_n_0                    | keys/rst_BUFG                       |                8 |             11 |         1.38 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[6][15]_i_1__10_n_0                    | keys/rst_BUFG                       |                6 |             11 |         1.83 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[3][15]_i_1__1_n_0                    | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[20][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[3][15]_i_1__10_n_0                    | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[9][15]_i_1__10_n_0                    | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[4][15]_i_1__1_n_0                    | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[5][15]_i_1__1_n_0                    | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[16][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[9][15]_i_1__1_n_0                    | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[8][15]_i_1__1_n_0                    | keys/rst_BUFG                       |                6 |             11 |         1.83 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[19][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData                                      | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[19][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData                                       | keys/rst_BUFG                       |                6 |             11 |         1.83 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[15][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[1][15]_i_1__1_n_0                    | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[1][15]_i_1__10_n_0                    | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[10][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[4][15]_i_1__10_n_0                    | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[14][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[6][15]_i_1__1_n_0                    | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[18][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[7][15]_i_1__10_n_0                    | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[19][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[23][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[2][15]_i_1__5_n_0                     | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[3][15]_i_1__5_n_0                     | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[16][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[4][15]_i_1__5_n_0                     | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[5][15]_i_1__5_n_0                     | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[14][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[13][10]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[16][10]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[24][10]_i_1_n_0                       | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[1][10]_i_1_n_0                        | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[5][10]_i_1_n_0                        | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[11][10]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[9][10]_i_1_n_0                        | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[17][10]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[0][10]_i_1_n_0                        | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData                                       | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[22][10]_i_1_n_0                       | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[3][10]_i_1_n_0                        | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[18][10]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[10][10]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[15][10]_i_1_n_0                       | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[19][10]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[6][10]_i_1_n_0                        | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[12][10]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[24][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[4][10]_i_1_n_0                        | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[14][10]_i_1_n_0                       | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[23][10]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[2][10]_i_1_n_0                        | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[7][10]_i_1_n_0                        | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/CoreData[8][10]_i_1_n_0                        | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[6][15]_i_1__5_n_0                     | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[7][15]_i_1__5_n_0                     | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[8][15]_i_1__5_n_0                     | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[24][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[9][15]_i_1__5_n_0                     | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[12][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[15][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData                                       | keys/rst_BUFG                       |                6 |             11 |         1.83 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[24][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[10][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[23][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[17][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[11][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[16][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/CoreData[21][15]_i_1__10_n_0                   | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[21][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[15][15]_i_1__1_n_0                   | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[7][15]_i_1__1_n_0                    | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/CoreData[2][15]_i_1__1_n_0                    | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[22][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[21][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                5 |             11 |         2.20 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[14][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[11][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[10][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[13][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                7 |             11 |         1.57 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[20][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                7 |             11 |         1.57 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[1][15]_i_1__5_n_0                     | keys/rst_BUFG                       |                2 |             11 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[18][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                3 |             11 |         3.67 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/CoreData[17][15]_i_1__5_n_0                    | keys/rst_BUFG                       |                4 |             11 |         2.75 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[6][11]_i_1__0_n_0                     | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[7][11]_i_1__0_n_0                     | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[18][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                9 |             12 |         1.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[5][11]_i_1__0_n_0                     | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[10][11]_i_1_n_0                       | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[11][11]_i_1_n_0                       | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData                                       | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[12][11]_i_1_n_0                       | keys/rst_BUFG                       |                5 |             12 |         2.40 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[15][11]_i_1_n_0                       | keys/rst_BUFG                       |                6 |             12 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[16][11]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[21][11]_i_1_n_0                       | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[8][11]_i_1_n_0                        | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[5][11]_i_1_n_0                        | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[22][11]_i_1_n_0                       | keys/rst_BUFG                       |                9 |             12 |         1.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[17][11]_i_1_n_0                       | keys/rst_BUFG                       |                4 |             12 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[2][11]_i_1_n_0                        | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[13][11]_i_1_n_0                       | keys/rst_BUFG                       |                6 |             12 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[23][11]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[24][11]_i_1_n_0                       | keys/rst_BUFG                       |                4 |             12 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[4][11]_i_1_n_0                        | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[18][11]_i_1_n_0                       | keys/rst_BUFG                       |                6 |             12 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[3][11]_i_1_n_0                        | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[6][11]_i_1_n_0                        | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[9][11]_i_1_n_0                        | keys/rst_BUFG                       |                6 |             12 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[14][11]_i_1_n_0                       | keys/rst_BUFG                       |                7 |             12 |         1.71 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[7][11]_i_1_n_0                        | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[20][11]_i_1_n_0                       | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[19][11]_i_1_n_0                       | keys/rst_BUFG                       |                6 |             12 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/CoreData[1][11]_i_1_n_0                        | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[11][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                6 |             12 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[2][11]_i_1__0_n_0                     | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[15][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[0][11]_i_1__0_n_0                     | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[14][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[10][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[8][11]_i_1__0_n_0                     | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[9][11]_i_1__0_n_0                     | keys/rst_BUFG                       |                5 |             12 |         2.40 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[4][11]_i_1__0_n_0                     | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[3][11]_i_1__0_n_0                     | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[17][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_2/PoolWindowCnt/E[0]                          | keys/rst_BUFG                       |                4 |             12 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_3/PoolWindowCnt/E[0]                          | keys/rst_BUFG                       |                7 |             12 |         1.71 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_4/PoolWindowCnt/E[0]                          | keys/rst_BUFG                       |                6 |             12 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_5/PoolWindowCnt/E[0]                          | keys/rst_BUFG                       |                4 |             12 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[16][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                5 |             12 |         2.40 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_1/PoolWindowCnt/E[0]                          | keys/rst_BUFG                       |                8 |             12 |         1.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[23][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                6 |             12 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[19][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                5 |             12 |         2.40 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[21][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                5 |             12 |         2.40 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[24][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                4 |             12 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[1][11]_i_1__0_n_0                     | keys/rst_BUFG                       |                2 |             12 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[12][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                3 |             12 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[22][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                8 |             12 |         1.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[20][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                7 |             12 |         1.71 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/CoreData[13][11]_i_1__0_n_0                    | keys/rst_BUFG                       |                4 |             12 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_2/PoolWindowCnt/E[0]                          | keys/rst_BUFG                       |                8 |             15 |         1.88 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_1/PoolWindowCnt/E[0]                          | keys/rst_BUFG                       |                7 |             15 |         2.14 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_3/PoolWindowCnt/E[0]                          | keys/rst_BUFG                       |                6 |             15 |         2.50 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv1_3/ShifterCnt/SR[0]  |                4 |             16 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv1_2/ShifterCnt/SR[0]  |                4 |             16 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv1_1/ShifterCnt/SR[0]  |                4 |             16 |         4.00 |
+|  clk25/inst/clk_out1 | theResize/AddrCmp                                                | keys/rst_BUFG                       |                5 |             17 |         3.40 |
+|  clk25/inst/clk_out1 | theCNN/fc1/Sum[0][17]_i_1_n_0                                    | keys/rst_BUFG                       |                5 |             18 |         3.60 |
+|  clk25/inst/clk_out1 |                                                                  | keys/cnt10ms[0]_i_1_n_0             |                5 |             18 |         3.60 |
+|  clk25/inst/clk_out1 | theCNN/fc1/Sum[9][17]_i_1_n_0                                    | keys/rst_BUFG                       |                3 |             18 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/Sum[7][17]_i_1_n_0                                    | keys/rst_BUFG                       |                6 |             18 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/Sum[1][17]_i_1_n_0                                    | keys/rst_BUFG                       |                6 |             18 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/Sum[4][17]_i_1_n_0                                    | keys/rst_BUFG                       |                5 |             18 |         3.60 |
+|  clk25/inst/clk_out1 | theCNN/fc1/Sum[6][17]_i_1_n_0                                    | keys/rst_BUFG                       |                4 |             18 |         4.50 |
+|  clk25/inst/clk_out1 | theCNN/fc1/Sum[3][17]_i_1_n_0                                    | keys/rst_BUFG                       |                5 |             18 |         3.60 |
+|  clk25/inst/clk_out1 | theCNN/fc1/Sum[8][17]_i_1_n_0                                    | keys/rst_BUFG                       |                3 |             18 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/Sum[2][17]_i_1_n_0                                    | keys/rst_BUFG                       |                4 |             18 |         4.50 |
+|  clk25/inst/clk_out1 | theCNN/fc1/Sum[5][17]_i_1_n_0                                    | keys/rst_BUFG                       |                3 |             18 |         6.00 |
+|  clk25/inst/clk_out1 | the_vga/ram_addr_out[0]_i_1_n_0                                  | the_vga/v_synch_OBUF                |                5 |             19 |         3.80 |
+|  clk25/inst/clk_out1 | sw6_IBUF                                                         | keys/keydown[0]                     |                5 |             19 |         3.80 |
+|  clk25/inst/clk_out1 | theCNN/fc1/CmpState__0[1]                                        | keys/rst_BUFG                       |                9 |             22 |         2.44 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/Fifo                                          |                                     |                4 |             24 |         6.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/Fifo                                          |                                     |                3 |             24 |         8.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_10/ShifterCnt/SR[0] |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_11/ShifterCnt/SR[0] |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_1/ShifterCnt/SR[0]  |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_2/Fifo                                        |                                     |                3 |             24 |         8.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_9/ShifterCnt/SR[0]  |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_8/ShifterCnt/SR[0]  |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_7/ShifterCnt/SR[0]  |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_6/ShifterCnt/SR[0]  |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_5/ShifterCnt/SR[0]  |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/Fifo                                           |                                     |                5 |             24 |         4.80 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_4/ShifterCnt/SR[0]  |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_15/ShifterCnt/SR[0] |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_1/Fifo                                        |                                     |                3 |             24 |         8.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_13/ShifterCnt/SR[0] |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_12/ShifterCnt/SR[0] |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_3/ShifterCnt/SR[0]  |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_2/ShifterCnt/SR[0]  |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 |                                                                  | theCNN/theConv2_14/ShifterCnt/SR[0] |                6 |             24 |         4.00 |
+|  clk25/inst/clk_out1 | the_ov7670/write_data[30]_i_1_n_0                                |                                     |                9 |             28 |         3.11 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_1/Fifo                                        |                                     |                4 |             30 |         7.50 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_2/Fifo                                        |                                     |                4 |             30 |         7.50 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_3/Fifo                                        |                                     |                4 |             30 |         7.50 |
+|  clk25/inst/clk_out1 | theResize/ResizWrAddr[18]_i_1_n_0                                | keys/rst_BUFG                       |                9 |             30 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/Fifo                                           | keys/rst_BUFG                       |               12 |             56 |         4.67 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_2/Fifo                                        | keys/rst_BUFG                       |               13 |             56 |         4.31 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/Fifo                                          | keys/rst_BUFG                       |               17 |             56 |         3.29 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/Fifo                                          | keys/rst_BUFG                       |               18 |             56 |         3.11 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool2_1/Fifo                                        | keys/rst_BUFG                       |               16 |             56 |         3.50 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[70][11]_i_1_n_0                           | keys/rst_BUFG                       |               17 |             60 |         3.53 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[50][11]_i_1_n_0                           | keys/rst_BUFG                       |               15 |             60 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[0][11]_i_1_n_0                            | keys/rst_BUFG                       |               16 |             60 |         3.75 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[40][11]_i_1_n_0                           | keys/rst_BUFG                       |               15 |             60 |         4.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[45][11]_i_1_n_0                           | keys/rst_BUFG                       |               35 |             60 |         1.71 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[10][11]_i_1_n_0                           | keys/rst_BUFG                       |               14 |             60 |         4.29 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[120][11]_i_1_n_0                          | keys/rst_BUFG                       |               22 |             60 |         2.73 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[115][11]_i_1_n_0                          | keys/rst_BUFG                       |               21 |             60 |         2.86 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[30][11]_i_1_n_0                           | keys/rst_BUFG                       |               31 |             60 |         1.94 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[55][11]_i_1_n_0                           | keys/rst_BUFG                       |               19 |             60 |         3.16 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[20][11]_i_1_n_0                           | keys/rst_BUFG                       |               14 |             60 |         4.29 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[5][11]_i_1_n_0                            | keys/rst_BUFG                       |               25 |             60 |         2.40 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[60][11]_i_1_n_0                           | keys/rst_BUFG                       |               30 |             60 |         2.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[80][11]_i_1_n_0                           | keys/rst_BUFG                       |               14 |             60 |         4.29 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[110][11]_i_1_n_0                          | keys/rst_BUFG                       |               22 |             60 |         2.73 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[100][11]_i_1_n_0                          | keys/rst_BUFG                       |               14 |             60 |         4.29 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[15][11]_i_1_n_0                           | keys/rst_BUFG                       |               23 |             60 |         2.61 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[25][11]_i_1_n_0                           | keys/rst_BUFG                       |               20 |             60 |         3.00 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[35][11]_i_1_n_0                           | keys/rst_BUFG                       |               14 |             60 |         4.29 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[105][11]_i_1_n_0                          | keys/rst_BUFG                       |               18 |             60 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[95][11]_i_1_n_0                           | keys/rst_BUFG                       |               32 |             60 |         1.88 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[65][11]_i_1_n_0                           | keys/rst_BUFG                       |               14 |             60 |         4.29 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[85][11]_i_1_n_0                           | keys/rst_BUFG                       |               18 |             60 |         3.33 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[90][11]_i_1_n_0                           | keys/rst_BUFG                       |               22 |             60 |         2.73 |
+|  clk25/inst/clk_out1 | theCNN/fc1/FCInputData[75][11]_i_1_n_0                           | keys/rst_BUFG                       |               25 |             60 |         2.40 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_2/Fifo                                        | keys/rst_BUFG                       |               18 |             86 |         4.78 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_1/Fifo                                        | keys/rst_BUFG                       |               21 |             86 |         4.10 |
+|  clk25/inst/clk_out1 | theCNN/theMaxPool1_3/Fifo                                        | keys/rst_BUFG                       |               22 |             86 |         3.91 |
+|  clk25/inst/clk_out1 |                                                                  |                                     |               52 |            109 |         2.10 |
+|  clk25/inst/clk_out1 | theCNN/fc1/ReluOutReg                                            | keys/rst_BUFG                       |               50 |            180 |         3.60 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_2/Shifter[0].ConvShifter[0][10]_i_1_n_0          | keys/rst_BUFG                       |               52 |            220 |         4.23 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_3/Shifter[4].ConvShifter[16][13]_i_1_n_0         | keys/rst_BUFG                       |               70 |            240 |         3.43 |
+|  clk25/inst/clk_out1 | theCNN/theConv1_1/DinAddr[9]_i_1_n_0                             | keys/rst_BUFG                       |               59 |            250 |         4.24 |
+|  clk25/inst/clk_out1 |                                                                  | keys/rst_BUFG                       |              152 |            314 |         2.07 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_6/Shifter[4].ConvShifter[16][21]_i_1__7_n_0      | keys/rst_BUFG                       |               73 |            440 |         6.03 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_14/Shifter[4].ConvShifter[16][21]_i_1_n_0        | keys/rst_BUFG                       |               76 |            440 |         5.79 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_15/Shifter[4].ConvShifter[16][21]_i_1__1_n_0     | keys/rst_BUFG                       |               73 |            440 |         6.03 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_4/Shifter[4].ConvShifter[16][21]_i_1__6_n_0      | keys/rst_BUFG                       |               72 |            440 |         6.11 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_5/Shifter[4].ConvShifter[16][21]_i_1__2_n_0      | keys/rst_BUFG                       |               79 |            440 |         5.57 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_13/Shifter[4].ConvShifter[16][21]_i_1__10_n_0    | keys/rst_BUFG                       |               85 |            440 |         5.18 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_9/Shifter[4].ConvShifter[16][21]_i_1__8_n_0      | keys/rst_BUFG                       |               81 |            440 |         5.43 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_8/Shifter[4].ConvShifter[16][21]_i_1__3_n_0      | keys/rst_BUFG                       |               89 |            440 |         4.94 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_11/Shifter[4].ConvShifter[16][21]_i_1__0_n_0     | keys/rst_BUFG                       |               90 |            440 |         4.89 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_10/Shifter[4].ConvShifter[16][21]_i_1__5_n_0     | keys/rst_BUFG                       |               80 |            440 |         5.50 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_7/Shifter[4].ConvShifter[16][21]_i_1__9_n_0      | keys/rst_BUFG                       |               76 |            440 |         5.79 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_12/Shifter[4].ConvShifter[16][21]_i_1__4_n_0     | keys/rst_BUFG                       |               81 |            440 |         5.43 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_3/DinAddr[7]_i_1__1_n_0                          | keys/rst_BUFG                       |              105 |            483 |         4.60 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_2/DinAddr[7]_i_1_n_0                             | keys/rst_BUFG                       |               82 |            483 |         5.89 |
+|  clk25/inst/clk_out1 | theCNN/theConv2_1/DinAddr[7]_i_1__0_n_0                          | keys/rst_BUFG                       |               92 |            483 |         5.25 |
+|  clk25/inst/clk_out1 | theCNN/theLayer1Ram/ReadCnt/E[0]                                 | keys/rst_BUFG                       |              275 |           1034 |         3.76 |
+|  clk25/inst/clk_out1 | theCNN/theLayer2Ram1/ReadCnt/E[0]                                | keys/rst_BUFG                       |              865 |           2948 |         3.41 |
+|  clk25/inst/clk_out1 | theCNN/theLayer2Ram3/ReadCnt/E[0]                                | keys/rst_BUFG                       |              850 |           2948 |         3.47 |
+|  clk25/inst/clk_out1 | theCNN/theLayer2Ram2/ReadCnt/E[0]                                | keys/rst_BUFG                       |              859 |           2948 |         3.43 |
++----------------------+------------------------------------------------------------------+-------------------------------------+------------------+----------------+--------------+
+
+
